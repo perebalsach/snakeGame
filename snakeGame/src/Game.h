@@ -11,11 +11,14 @@ public:
     void Update();
     void Render();
 
+    void CalculateDelta();
     bool IsRunning();
 
 private:
     bool m_IsRunning;
     sf::RenderWindow m_Window;
+    sf::Clock m_Clock;
+    float m_deltaTime;
 };
 
 #endif

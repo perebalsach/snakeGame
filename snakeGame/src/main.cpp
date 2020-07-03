@@ -9,6 +9,7 @@ int main() {
         game.Input();
         game.Update();
         game.Render();
+        game.CalculateDelta();
     }
     return 0;
 }
