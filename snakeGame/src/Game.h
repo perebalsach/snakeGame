@@ -15,8 +15,7 @@ public:
 
 private:
     bool m_IsRunning;
-    sf::Event m_Event;
-    Window m_Window;
+    sf::RenderWindow m_Window;
 };
 
 #endif
