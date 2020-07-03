@@ -4,12 +4,13 @@
 
 int main() {
 
-    Game game;
-    while (game.IsRunning()) {
-        game.Input();
-        game.Update();
-        game.Render();
-        game.CalculateDelta();
+    Game* game = new Game;
+
+    while (game->IsRunning()) {
+        game->Input();
+        game->Update();
+        game->Render();
+        game->CalculateDelta();
     }
     return 0;
 }
