@@ -7,18 +7,37 @@ Game::Game() : m_Window("Snake") {
 
 void Game::Input() {
     m_Window.Input();
+
+    if (m_Window.MoveUp()) {
+
+    }
+    if (m_Window.MoveDown()) {
+
+    }
+    if (m_Window.MoveLeft()) {
+
+    }
+    if (m_Window.MoveRight()) {
+
+    }
 }
 
 void Game::Update() {
 
+    m_Snake.Update();
 }
 
 void Game::Render() {
     m_Window.Clear();
-    std::vector<sf::Sprite> spriteList;
-    spriteList.push_back(m_Snake.GetSprite());
+
+    // Getting elements to render
+    std::vector<sf::Sprite>* spriteList = new std::vector<sf::Sprite>;
+    
+    spriteList->push_back(m_Snake.GetSprite());
+    // --------------------------
+
+    // Draw all the elements
     m_Window.Draw(spriteList);
-    //m_Window.Draw();
 }
 
 void Game::CalculateDelta() {
