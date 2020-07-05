@@ -3,6 +3,8 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <vector>
+
 
 class Window
 {
@@ -11,7 +13,7 @@ public:
 	~Window();
 
 	void Input();
-	void Draw();
+	void Draw(std::vector<sf::Sprite> sprites);
 	void Clear();
 
 	const bool IsOpen() const;

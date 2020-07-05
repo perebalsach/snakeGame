@@ -10,12 +10,15 @@ void Game::Input() {
 }
 
 void Game::Update() {
+
 }
 
 void Game::Render() {
     m_Window.Clear();
-
-    m_Window.Draw();
+    std::vector<sf::Sprite> spriteList;
+    spriteList.push_back(m_Snake.GetSprite());
+    m_Window.Draw(spriteList);
+    //m_Window.Draw();
 }
 
 void Game::CalculateDelta() {

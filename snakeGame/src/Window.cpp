@@ -33,12 +33,15 @@ void Window::Input() {
     }
 }
 
-void Window::Draw() {
+void Window::Draw(std::vector<sf::Sprite> sprites) {
+    for (auto const& sprite : sprites) {
+        m_Window->draw(sprite);
+    }
     m_Window->display();
 }
 
 void Window::Clear() {
-    m_Window->clear();
+    m_Window->clear(sf::Color::Black);
 }
 
 const bool Window::IsOpen() const {
