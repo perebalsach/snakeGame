@@ -1,29 +1,21 @@
 #include "Game.h"
 
-Game::Game() : m_Window(sf::VideoMode(800, 600), "Snake Game"){
+Game::Game() : m_Window("Snake") {
+    m_deltaTime = m_Clock.restart().asSeconds();
     m_IsRunning = true;
 }
 
 void Game::Input() {
-    sf::Event event;
-    while (m_Window.pollEvent(event)) {
-        if (event.type == sf::Event::Closed) {
-            m_IsRunning = false;
-            m_Window.close();
-        }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
-            m_IsRunning = false;
-            m_Window.close();
-        }
-    }
+    m_Window.Input();
 }
 
 void Game::Update() {
 }
 
 void Game::Render() {
-    m_Window.clear(sf::Color::Blue);
-    m_Window.display();
+    m_Window.Clear();
+
+    m_Window.Draw();
 }
 
 void Game::CalculateDelta() {
@@ -31,9 +23,8 @@ void Game::CalculateDelta() {
 }
 
 bool Game::IsRunning() {
-    if (!m_IsRunning) {
+    if (!m_Window.IsOpen()) {
         return false;
     }
-    return true;
-    
+    return m_IsRunning;
 }

@@ -2,19 +2,22 @@
 #define WINDOW_H
 
 #include <SFML/Graphics.hpp>
+#include <iostream>
 
 class Window
 {
 public:
 	Window(const std::string& windowTitle);
+	~Window();
 
-	void Update();
+	void Input();
 	void Draw();
+	void Clear();
 
-	bool IsOpen();
+	const bool IsOpen() const;
 
 private:
-	sf::RenderWindow m_Window;
+	sf::RenderWindow* m_Window;
 };
 
 #endif // !WINDOW_H

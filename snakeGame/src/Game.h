@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "Window.h"
+#include "Snake.h"
 
 class Game {
 public:
@@ -16,9 +17,12 @@ public:
 
 private:
     bool m_IsRunning;
-    sf::RenderWindow m_Window;
-    sf::Clock m_Clock;
     float m_deltaTime;
+
+    Window m_Window;
+    sf::Clock m_Clock;
+    
+    Snake m_Snake;
 };
 
 #endif
